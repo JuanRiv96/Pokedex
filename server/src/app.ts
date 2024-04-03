@@ -29,7 +29,6 @@ server.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   // eslint-disable-line no-unused-vars
   const status = err.statusCode || 500;
   const message = err.message || err;
-  console.error('ESTOY ACA', err);
   res.status(status).json({ error: true, message: message });
 });
 

@@ -6,3 +6,4 @@ package.json
 .eslintignore
 .prettierignore
 .prettierrc.json
+.gitignore

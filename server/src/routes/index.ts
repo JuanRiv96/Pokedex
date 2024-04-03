@@ -18,7 +18,6 @@ router.get(
       throw new SearchError('Pokemon not Found', 400);
     } else {
       const allPokemons = await getAllPokemons();
-      console.log(allPokemons);
       return response(res, 200, allPokemons);
     }
   })
@@ -41,7 +40,7 @@ router.get(
 
 router.get(
   '/types',
-  catchAsync(async (req: Request, res: Response) => {
+  catchAsync(async (_req: Request, res: Response) => {
     const types = await getTypes();
     return response(res, 200, types);
   })
