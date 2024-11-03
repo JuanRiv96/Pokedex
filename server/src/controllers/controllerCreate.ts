@@ -1,6 +1,7 @@
 import { Pokemon } from '../models/Pokemon';
 import { Type } from '../models/Type';
 import { CreateTypes } from '../interfaces';
+import { ClientError } from '../utils/errors';
 
 export const createPokemon = async (data: CreateTypes): Promise<{ message: string }> => {
   const { name, hp, attack, defense, speed, height, weight, img, types } = data;
@@ -19,7 +20,7 @@ export const createPokemon = async (data: CreateTypes): Promise<{ message: strin
     }
   });
   if (created === false) {
-    throw new Error(`El pokemon con nombre ${name} ya fue creado`);
+    throw new ClientError(`The pokemon with name ${name} has already been created`);
   }
   let type = await Type.findAll({
     where: {
@@ -27,5 +28,5 @@ export const createPokemon = async (data: CreateTypes): Promise<{ message: strin
     }
   });
   pokemonCreate.$add('Type', type);
-  return { message: 'Pokemon creado con exito' };
+  return { message: 'Pokemon created successfully' };
 };
