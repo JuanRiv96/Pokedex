@@ -15,7 +15,7 @@ router.get(
       if (apiRes) return response(res, 200, apiRes);
       const dbRes = await pokemonDbByName(name);
       if (dbRes) return response(res, 200, dbRes);
-      throw new SearchError('Pokemon not Found', 400);
+      throw new SearchError('Pokemon not found', 400);
     } else {
       const allPokemons = await getAllPokemons();
       return response(res, 200, allPokemons);
