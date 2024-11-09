@@ -2,7 +2,7 @@
 
 Hello and thank you for being interested in this project which is an API that provides a list of 40 pokemons that you can filter, their specific details as well as a search engine and creator of custom pokemons.
 
-### Pasos y comandos a ejecutar.
+### Steps and commands to execute. 
 
 1.- As a first step, you must place the required environment variables in the .env file and consider that the default database in the configuration is PostgresSQL.
 > You can use any database manager you want as long as you set the correct configuration. 
